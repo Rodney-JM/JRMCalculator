@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRM - Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+    <main class="radial-bg">
+        <section class="h-screen flex flex-col justify-center items-center text-red-50  font-montserrat">
+            <h1 class=" text-8xl">JRM<span class="text-red-400">Calculator</span></h1>
+            <p class="mt-5 text-xl text-red-200">Made by Rodney</p>
+        </section>
+        <section class="calculator flex justify-center items-center p-10">
+            <form action="get">
+                <input type="number" name="result" id="result" class="rounded-full">
+                <ul class="flex justify-between px-5 py-2">
+                    <div class="flex space-x-2">
+                        <li><i class='bx bx-ruler'></i></li>
+                        <li><i class='bx bx-math'></i></li>
+                    </div>
+                    <li><i class='bx bx-message-square-x'></i></li>
+                </ul>
+                <div>
+                    <div>
+                        <input type="button" value="C" onclick="clearAll()"/>
+                        <input type="button" value="()" onclick="insertParentheses()">
+                        <input type="button" value="%" onclick="porcentOperation()">
+                        <input type="button" value="/" onclick="operations('/')"/>
+                    </div>
+                    <div>
+                        <input type="button" value="7" onclick="insertNumber(7)">
+                        <input type="button" value="8" onclick="insertNumber(8)">
+                        <input type="button" value="9" onclick="insertNumber(9)">
+                        <input type="button" value="X" onclick="operations('*')">
+                    </div>
+                    <div>
+                        <input type="button" value="4" onclick="insertNumber(4)">
+                        <input type="button" value="5" onclick="insertNumber(5)">
+                        <input type="button" value="6" onclick="insertNumber(6)">
+                        <input type="button" value="-" onclick="operations('-')">
+                    </div>
+                    <div>
+                        <input type="button" value="1" onclick="insertNumber(1)">
+                        <input type="button" value="2" onclick="insertNumber(2)">
+                        <input type="button" value="3" onclick="insertNumber(3)">
+                        <input type="button" value="+" onclick="operations('+')">
+                    </div>
+                    <div>
+                        <input type="button" value="+/-">
+                        <input type="button" value="0" onclick="insertNumber(0)">
+                        <input type="button" value=".">
+                        <input type="button" value="=" onclick="equalsTo()">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>

@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities; 
 
+@layer components{
+    .radial-bg{
+        background: radial-gradient(ellipse at top, rgb(39, 39, 39), 
+        rgb(126, 0, 0)),
+            radial-gradient(ellipse at bottom, black, rgb(158, 0, 0));
+    }
+}
