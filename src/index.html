@@ -20,45 +20,45 @@
             <p class="mt-5 text-xl text-red-200">Made by Rodney</p>
         </section>
         <section class="calculator flex justify-center items-center p-10">
-            <form action="get" class="h-screen w-full flex justify-center items-center flex-col">
-                <input type="number" name="result" id="result" class="rounded-full w-[400px] h-[50px]">
-                <ul class="flex justify-between px-5 py-2 space-x-[100px]">
+            <form action="get" class="h-[800px] flex justify-center items-center flex-col bg-gradient-to-b from-gray-950 to-gray-900 p-6 rounded-lg">
+                <input type="number" name="result" id="result" class="rounded-full w-full h-[50px]">
+                <ul class="w-full flex justify-between py-4 text-3xl text-red-50">
                     <div class="flex space-x-2">
                         <li><i class='bx bx-ruler'></i></li>
                         <li><i class='bx bx-math'></i></li>
                     </div>
-                    <li><i class='bx bx-message-square-x'></i></li>
+                    <li><i class='bx bx-message-square-x text-red-200'></i></li>
                 </ul>
-                <div>
-                    <div>
-                        <input type="button" value="C" onclick="clearAll()"/>
-                        <input type="button" value="()" onclick="insertParentheses()">
-                        <input type="button" value="%" onclick="porcentOperation()">
-                        <input type="button" value="/" onclick="operations('/')"/>
+                <div class="flex flex-col justify-center text-4xl space-y-[50px] mt-[20px]">
+                    <div class="space-x-[60px]">
+                        <input type="button" value="C" class="special__number" onclick="clearAll()"/>
+                        <input type="button" value="()" class="special__number" onclick="insertParentheses()">
+                        <input type="button" value="%" class="special__number" onclick="porcentOperation()">
+                        <input type="button" value="/" class="special__number" onclick="operations('/')"/>
                     </div>
-                    <div>
-                        <input type="button" value="7" onclick="insertNumber(7)">
-                        <input type="button" value="8" onclick="insertNumber(8)">
-                        <input type="button" value="9" onclick="insertNumber(9)">
-                        <input type="button" value="X" onclick="operations('*')">
+                    <div class="flex justify-between">
+                        <input type="button" value="7" class="number" onclick="insertNumber(7)">
+                        <input type="button" value="8" class="number" onclick="insertNumber(8)">
+                        <input type="button" value="9" class="number" onclick="insertNumber(9)">
+                        <input type="button" value="X" class="special__number" onclick="operations('*')">
                     </div>
-                    <div>
-                        <input type="button" value="4" onclick="insertNumber(4)">
-                        <input type="button" value="5" onclick="insertNumber(5)">
-                        <input type="button" value="6" onclick="insertNumber(6)">
-                        <input type="button" value="-" onclick="operations('-')">
+                    <div class="flex justify-between"">
+                        <input type="button" value="4" class="number" onclick="insertNumber(4)">
+                        <input type="button" value="5" class="number" onclick="insertNumber(5)">
+                        <input type="button" value="6" class="number" onclick="insertNumber(6)">
+                        <input type="button" value="-" class="special__number" onclick="operations('-')">
                     </div>
-                    <div>
-                        <input type="button" value="1" onclick="insertNumber(1)">
-                        <input type="button" value="2" onclick="insertNumber(2)">
-                        <input type="button" value="3" onclick="insertNumber(3)">
-                        <input type="button" value="+" onclick="operations('+')">
+                    <div class="flex justify-between">
+                        <input type="button" value="1" class="number" onclick="insertNumber(1)">
+                        <input type="button" value="2" class="number" onclick="insertNumber(2)">
+                        <input type="button" value="3" class="number" onclick="insertNumber(3)">
+                        <input type="button" value="+" class="special__number" onclick="operations('+')">
                     </div>
-                    <div>
-                        <input type="button" value="+/-">
-                        <input type="button" value="0" onclick="insertNumber(0)">
-                        <input type="button" value=".">
-                        <input type="button" value="=" onclick="equalsTo()">
+                    <div class="flex justify-between">
+                        <input type="button" value="+/-" class="special__number">
+                        <input type="button" value="0" class="special__number" onclick="insertNumber(0)">
+                        <input type="button" value="." class="special__number">
+                        <input type="button" value="=" class="special__number" onclick="equalsTo()">
                     </div>
                 </div>
             </form>

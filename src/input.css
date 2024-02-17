@@ -8,4 +8,16 @@
         rgb(126, 0, 0)),
             radial-gradient(ellipse at bottom, black, rgb(158, 0, 0));
     }
+    .number{
+        color: rgb(211, 211, 255);
+        background-color: rgb(31, 31, 46);
+        padding: 1rem 1.7rem 1rem 1.7rem;
+        border-radius: 100%;
+    }
+    .special__number{
+        color: rgb(255, 202, 202);
+        background-color: rgb(46, 31, 31);
+        padding: 1rem 1.7rem 1rem 1.7rem;
+        border-radius: 100%;
+    }
 }
