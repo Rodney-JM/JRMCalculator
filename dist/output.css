@@ -555,13 +555,25 @@ video {
   background-color: rgb(31, 31, 46);
   padding: 1rem 1.7rem 1rem 1.7rem;
   border-radius: 100%;
+  cursor: pointer;
+}
+
+.number:hover{
+  background-color: rgb(35, 35, 56);
 }
 
 .special__number{
+  text-align: center;
   color: rgb(255, 202, 202);
   background-color: rgb(46, 31, 31);
   padding: 1rem 1.7rem 1rem 1.7rem;
   border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.special__number:hover{
+  background-color: rgb(65, 46, 46);
 }
 
 .mt-5 {
@@ -592,6 +604,10 @@ video {
   width: 100%;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -620,10 +636,10 @@ video {
   margin-left: calc(60px * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-\[50px\] > :not([hidden]) ~ :not([hidden]) {
+.space-y-\[30px\] > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(50px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(50px * var(--tw-space-y-reverse));
+  margin-top: calc(30px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(30px * var(--tw-space-y-reverse));
 }
 
 .rounded-full {
@@ -656,6 +672,10 @@ video {
   padding: 1.5rem;
 }
 
+.p-\[20px\] {
+  padding: 20px;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -663,6 +683,11 @@ video {
 
 .font-montserrat {
   font-family: Montserrat, sans-serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
@@ -698,4 +723,15 @@ video {
 .text-red-50 {
   --tw-text-opacity: 1;
   color: rgb(254 242 242 / var(--tw-text-opacity));
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }

@@ -13,11 +13,21 @@
         background-color: rgb(31, 31, 46);
         padding: 1rem 1.7rem 1rem 1.7rem;
         border-radius: 100%;
+        cursor: pointer;
+    }
+    .number:hover{
+        background-color: rgb(35, 35, 56);
     }
     .special__number{
+        text-align: center;
         color: rgb(255, 202, 202);
         background-color: rgb(46, 31, 31);
         padding: 1rem 1.7rem 1rem 1.7rem;
         border-radius: 100%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .special__number:hover{
+        background-color: rgb(65, 46, 46);
     }
 }

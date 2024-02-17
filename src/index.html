@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 <body>
@@ -21,49 +19,92 @@
         </section>
         <section class="calculator flex justify-center items-center p-10">
             <form action="get" class="h-[800px] flex justify-center items-center flex-col bg-gradient-to-b from-gray-950 to-gray-900 p-6 rounded-lg">
-                <input type="number" name="result" id="result" class="rounded-full w-full h-[50px]">
+                <input type="text" name="result" id="result" class="rounded-full w-full h-[50px] p-[20px] text-2xl" value="0" readonly>
                 <ul class="w-full flex justify-between py-4 text-3xl text-red-50">
                     <div class="flex space-x-2">
-                        <li><i class='bx bx-ruler'></i></li>
-                        <li><i class='bx bx-math'></i></li>
+                        <li><i class='bx bx-ruler cursor-pointer'></i></li>
+                        <li><i class='bx bx-math cursor-pointer'></i></li>
                     </div>
-                    <li><i class='bx bx-message-square-x text-red-200'></i></li>
+                    <li><i class='bx bx-message-square-x text-red-200 cursor-pointer transition-all hover:text-red-500'></i></li>
                 </ul>
-                <div class="flex flex-col justify-center text-4xl space-y-[50px] mt-[20px]">
+                <div class="flex flex-col justify-center text-4xl space-y-[30px] mt-[20px]">
                     <div class="space-x-[60px]">
                         <input type="button" value="C" class="special__number" onclick="clearAll()"/>
                         <input type="button" value="()" class="special__number" onclick="insertParentheses()">
                         <input type="button" value="%" class="special__number" onclick="porcentOperation()">
-                        <input type="button" value="/" class="special__number" onclick="operations('/')"/>
+                        <input type="button" value="/" class="special__number" onclick="insertNumber('/')"/>
                     </div>
                     <div class="flex justify-between">
-                        <input type="button" value="7" class="number" onclick="insertNumber(7)">
-                        <input type="button" value="8" class="number" onclick="insertNumber(8)">
-                        <input type="button" value="9" class="number" onclick="insertNumber(9)">
-                        <input type="button" value="X" class="special__number" onclick="operations('*')">
+                        <input type="button" value="7" class="number" onclick="insertNumber('7')">
+                        <input type="button" value="8" class="number" onclick="insertNumber('8')">
+                        <input type="button" value="9" class="number" onclick="insertNumber('9')">
+                        <input type="button" value="X" class="special__number" onclick="insertNumber('*')">
                     </div>
                     <div class="flex justify-between"">
-                        <input type="button" value="4" class="number" onclick="insertNumber(4)">
-                        <input type="button" value="5" class="number" onclick="insertNumber(5)">
-                        <input type="button" value="6" class="number" onclick="insertNumber(6)">
-                        <input type="button" value="-" class="special__number" onclick="operations('-')">
+                        <input type="button" value="4" class="number" onclick="insertNumber('4')">
+                        <input type="button" value="5" class="number" onclick="insertNumber('5')">
+                        <input type="button" value="6" class="number" onclick="insertNumber('6')">
+                        <input type="button" value="-" class="special__number" onclick="insertNumber('-')">
                     </div>
                     <div class="flex justify-between">
-                        <input type="button" value="1" class="number" onclick="insertNumber(1)">
-                        <input type="button" value="2" class="number" onclick="insertNumber(2)">
-                        <input type="button" value="3" class="number" onclick="insertNumber(3)">
-                        <input type="button" value="+" class="special__number" onclick="operations('+')">
+                        <input type="button" value="1" class="number" onclick="insertNumber('1')">
+                        <input type="button" value="2" class="number" onclick="insertNumber('2')">
+                        <input type="button" value="3" class="number" onclick="insertNumber('3')">
+                        <input type="button" value="+" class="special__number" onclick="insertNumber('+')">
                     </div>
                     <div class="flex justify-between">
-                        <input type="button" value="+/-" class="special__number">
-                        <input type="button" value="0" class="special__number" onclick="insertNumber(0)">
-                        <input type="button" value="." class="special__number">
-                        <input type="button" value="=" class="special__number" onclick="equalsTo()">
+                        <input type="button" value="+/-" class="special__number" onclick="changeSign()">
+                        <input type="button" value="0" class="special__number" onclick="insertNumber('0')">
+                        <input type="button" value="." class="special__number" onclick="insertNumber('.')">
+                        <input type="button" value="=" class="special__number" onclick="evalResult()">
                     </div>
                 </div>
             </form>
         </section>
     </main>
-    
+    <script>
+        // Get the input element
+        const input = document.getElementById("result");
+
+        // Define the functions for the calculator
+
+        // Clear the input
+        function clearAll() {
+            input.value = "0";
+        }
+
+        // Insert parentheses
+        function insertParentheses() {
+            if (input.value == "0") {
+                input.value = "(";
+            } else {
+                input.value += ")";
+            }
+        }
+
+        // Calculate the percentage
+        function porcentOperation() {
+            input.value = eval(input.value) / 100;
+        }
+
+        // Insert a number or an operator
+        function insertNumber(number) {
+            if (input.value == "0") {
+                input.value = number;
+            } else {
+                input.value += number;
+            }
+        }
+
+        // Change the sign of the input
+        function changeSign() {
+            input.value = -input.value;
+        }
+
+        // Evaluate the expression
+        function evalResult() {
+            input.value = eval(input.value);
+        }
+    </script>
 </body>
 </html>
